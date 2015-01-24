@@ -3,6 +3,12 @@ using System.Collections;
 
 public class CreateToClick : MonoBehaviour {
 
+    private GameObject cursor;
+
+    public GameObject drop_box;
+
+	private GameRoot gameRoot;
+
 	public static Vector3? convert_position( Vector3? pos )
 	{
 		float x = Mathf.FloorToInt(pos.Value.x / 1.0f + 1.0f / 2.0f) * 1.0f;
@@ -12,14 +18,11 @@ public class CreateToClick : MonoBehaviour {
 		return new Vector3 ( x , y , z );
 	}
 
-	private GameObject cursor;
-	
-	public GameObject drop_box;
-
 	// Use this for initialization
 	void Start () {
 
 		cursor = GameObject.Find ("cursor");
+		gameRoot = GameObject.Find ("GameRoot").GetComponent<GameRoot> ();
 	}
 	
 	// Update is called once per frame
@@ -44,7 +47,7 @@ public class CreateToClick : MonoBehaviour {
 
 		if (Input.GetMouseButtonDown(0))
         {
-			if (pos != null)
+			if (pos != null && !gameRoot.isMaxBlock)
 			{
 				createBox(pos);
 			}

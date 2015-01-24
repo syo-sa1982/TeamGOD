@@ -64,7 +64,9 @@
     <Compile Include="Assets\CreateToClick.cs" />
     <Compile Include="Assets\DayLabel.cs" />
     <Compile Include="Assets\EffectRange.cs" />
+    <Compile Include="Assets\GameRoot.cs" />
     <Compile Include="Assets\Gui.cs" />
+    <Compile Include="Assets\NewBehaviourScript.cs" />
     <Compile Include="Assets\moririring\RubicCube.cs" />
   </ItemGroup>
   <ItemGroup>
