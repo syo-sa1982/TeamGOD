@@ -49,6 +49,7 @@
      <Compile Include="Assets\01_local\syo_sa\Scripts\ButtonController.cs" />
      <Compile Include="Assets\01_local\watanabe\camera_move.cs" />
      <Compile Include="Assets\01_local\watanabe\ground.cs" />
+     <Compile Include="Assets\BlockNumLabel.cs" />
      <Compile Include="Assets\CombineBlock.cs" />
      <Compile Include="Assets\CreateToClick.cs" />
      <Compile Include="Assets\EffectRange.cs" />
