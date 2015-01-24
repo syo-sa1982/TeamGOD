@@ -8,6 +8,8 @@ public class CreateToClick : MonoBehaviour {
 
     public GameObject drop_box;
 
+	private GameRoot gameRoot;
+
 	private Vector3? convert_position( Vector3? pos )
 	{
 		float x = Mathf.FloorToInt(pos.Value.x / 1.0f + 1.0f / 2.0f) * 1.0f;
@@ -20,6 +22,7 @@ public class CreateToClick : MonoBehaviour {
 	void Start () {
 
 		cursor = GameObject.Find ("cursor");
+		gameRoot = GameObject.Find ("GameRoot").GetComponent<GameRoot> ();
 	}
 	
 	// Update is called once per frame
@@ -44,7 +47,7 @@ public class CreateToClick : MonoBehaviour {
 
 		if (Input.GetMouseButtonDown(0))
         {
-			if (pos != null)
+			if (pos != null && !gameRoot.isMaxBlock)
 			{
 				createBox(pos);
 			}

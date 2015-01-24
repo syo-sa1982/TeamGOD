@@ -20,8 +20,5 @@ public class DayLabel : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
-		if (currentDay > 0) {
-			dayText.text = currentDay + "日目";
-		}
 	}
 }
