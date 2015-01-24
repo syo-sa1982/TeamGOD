@@ -20,6 +20,7 @@ public class Gui : MonoBehaviour {
 
 	public void combine()
 	{
+<<<<<<< HEAD
 
 		dayText = GameObject.Find ("CurrentDayLabel/Text").GetComponent<Text> ();
 		dayLabel = GameObject.Find ("CurrentDayLabel/Text").GetComponent<DayLabel> ();
@@ -36,8 +37,11 @@ public class Gui : MonoBehaviour {
 		Debug.Log (dayLabel.currentDay);
 
 		foreach( GameObject gm  in GameObject.FindGameObjectsWithTag("block") )
+=======
+		foreach( GameObject gm in GameObject.FindGameObjectsWithTag("block") )
+>>>>>>> 2e7521c0fca0fc08c82f9f5e3b897243b56bcb72
 		{
-			if( gm != null )
+			if( gm.activeSelf )
 			{
 				gm.GetComponent<EffectRange>().check_run_combine();
 			}

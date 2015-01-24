@@ -3,6 +3,7 @@ using System.Collections;
 
 public class CreateToClick : MonoBehaviour {
 
+<<<<<<< HEAD
 
     private GameObject cursor;
 
@@ -11,6 +12,9 @@ public class CreateToClick : MonoBehaviour {
 	private GameRoot gameRoot;
 
 	private Vector3? convert_position( Vector3? pos )
+=======
+	public static Vector3? convert_position( Vector3? pos )
+>>>>>>> 2e7521c0fca0fc08c82f9f5e3b897243b56bcb72
 	{
 		float x = Mathf.FloorToInt(pos.Value.x / 1.0f + 1.0f / 2.0f) * 1.0f;
 		float y = Mathf.FloorToInt(pos.Value.y / 1.0f + 1.0f / 2.0f) * 1.0f;
@@ -18,6 +22,11 @@ public class CreateToClick : MonoBehaviour {
 
 		return new Vector3 ( x , y , z );
 	}
+
+	private GameObject cursor;
+	
+	public GameObject drop_box;
+
 	// Use this for initialization
 	void Start () {
 
