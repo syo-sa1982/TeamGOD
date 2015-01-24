@@ -1,21 +1,18 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\EffectRange.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\CreateToClick.cs">
     <Files>
-      <File FileName="Assets\CreateToClick.cs" Line="18" Column="2" />
-      <File FileName="Assets\EffectRange.cs" Line="14" Column="2" />
+      <File FileName="Assets\EffectRange.cs" Line="13" Column="2" />
+      <File FileName="Assets\CreateToClick.cs" Line="73" Column="2" />
       <File FileName="Assets\01_local\watanabe\gravity.cs" Line="1" Column="1" />
       <File FileName="Assets\01_local\watanabe\camera_move.cs" Line="1" Column="1" />
       <File FileName="Assets\01_local\watanabe\ground.cs" Line="1" Column="1" />
-      <File FileName="Assets\Gui.cs" Line="1" Column="1" />
+      <File FileName="Assets\Gui.cs" Line="20" Column="2" />
       <File FileName="Assets\CombineBlock.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="C:\Users\ultra-tkymx\Documents\TeamGOD\7days\Assets\EffectRange.cs" line="41" />
-      <Breakpoint file="C:\Users\ultra-tkymx\Documents\TeamGOD\7days\Assets\EffectRange.cs" line="39" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
     <Watch file="Assets\EffectRange.cs" line="51" offsetX="452" offsetY="1050" expression="gm.gameObject" liveUpdate="False" />

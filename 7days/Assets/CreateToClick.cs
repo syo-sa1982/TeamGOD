@@ -18,7 +18,6 @@ public class CreateToClick : MonoBehaviour {
 		return new Vector3 ( x , y , z );
 	}
 
-
 	// Use this for initialization
 	void Start () {
 

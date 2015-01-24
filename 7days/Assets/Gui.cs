@@ -36,11 +36,15 @@ public class Gui : MonoBehaviour {
 		Debug.Log (dayLabel.currentDay);
 
 		foreach( GameObject gm in GameObject.FindGameObjectsWithTag("block") )
-		{
+        {
 			if( gm.activeSelf )
 			{
 				gm.GetComponent<EffectRange>().check_run_combine();
 			}
+		}	
+		foreach (GameObject gm in GameObject.FindGameObjectsWithTag("block")) 
+		{
+			Destroy(gm);
 		}
 		
 	}
