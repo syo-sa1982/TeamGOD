@@ -3,6 +3,11 @@ using System.Collections;
 
 public class CreateToClick : MonoBehaviour {
 
+
+    private GameObject cursor;
+
+    public GameObject drop_box;
+
 	private Vector3? convert_position( Vector3? pos )
 	{
 		float x = Mathf.FloorToInt(pos.Value.x / 1.0f + 1.0f / 2.0f) * 1.0f;
@@ -11,10 +16,6 @@ public class CreateToClick : MonoBehaviour {
 
 		return new Vector3 ( x , y , z );
 	}
-
-	private GameObject cursor;
-
-	public GameObject drop_box;
 	// Use this for initialization
 	void Start () {
 
@@ -71,11 +72,30 @@ public class CreateToClick : MonoBehaviour {
         {
             return null;
         }
+
     }
 
     public void setDropBox(int boxId)
     {
         Debug.Log (boxId);
+
+        switch (boxId) {
+        case 1:
+            drop_box = (GameObject)Resources.Load ("Prefabs/block_red");
+            break;
+        case 2:
+            drop_box = (GameObject)Resources.Load ("Prefabs/block_white");
+            break;
+        case 3:
+            drop_box = (GameObject)Resources.Load ("Prefabs/block_bule");
+            break;
+        case 4:
+            drop_box = (GameObject)Resources.Load ("Prefabs/block_green");
+            break;
+        case 5:
+            drop_box = (GameObject)Resources.Load ("Prefabs/block_brown");
+            break;
+        }
     }
 
 }
