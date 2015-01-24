@@ -10,6 +10,8 @@ public class EffectRange : MonoBehaviour
     public float range;
     private float effect_count = 2.0f;
 
+	public GameObject combine_effect; 
+
     public float get_effect_count()
     {
         return effect_count;
@@ -52,6 +54,7 @@ public class EffectRange : MonoBehaviour
                 print(gm.name);
             }
             Instantiate(next_box, mean, Quaternion.identity);
+			Instantiate(Resources.Load("Prefabs/Effects/CombineEffect"), this.transform.position, this.transform.rotation);
             Destroy(this);
 
         }
