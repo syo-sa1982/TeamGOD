@@ -13,16 +13,6 @@ public class Gui : MonoBehaviour {
 	
 	}
 
-	void OnGUI()
-	{
-		if( GUI.Button( new Rect( 10 , 10 , 100 , 50 ) , "Button" ) )
-		{
-			combine();	
-
-			GameObject.Find ("flor").GetComponent<ground>().search_ground_object();
-		}
-	}
-
 
 	public void combine()
 	{
