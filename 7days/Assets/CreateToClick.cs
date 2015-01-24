@@ -73,4 +73,9 @@ public class CreateToClick : MonoBehaviour {
         }
     }
 
+    public void setDropBox(int boxId)
+    {
+        Debug.Log (boxId);
+    }
+
 }
