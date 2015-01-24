@@ -24,7 +24,7 @@ public class Gui : MonoBehaviour {
 	}
 
 
-	void combine()
+	public void combine()
 	{
 		foreach( GameObject gm  in GameObject.FindGameObjectsWithTag("block") )
 		{
