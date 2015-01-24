@@ -13,8 +13,9 @@ public class CreateToClick : MonoBehaviour {
 	}
 
 	private GameObject cursor;
-
+	
 	public GameObject drop_box;
+
 	// Use this for initialization
 	void Start () {
 
@@ -48,6 +49,13 @@ public class CreateToClick : MonoBehaviour {
 				createBox(pos);
 			}
         }
+		if (Input.GetMouseButtonDown (1))
+		{
+			if (pos != null)
+			{
+				deleteBox(pos);
+			}
+		}
 	}
     private void createBox(Vector3? pos)
     {
@@ -58,6 +66,15 @@ public class CreateToClick : MonoBehaviour {
                 new Vector3(cp.Value.x, 8.0f, cp.Value.z),
                 Quaternion.identity);
     }
+	private void deleteBox(Vector3? pos)
+	{
+		Vector3? cp = convert_position( pos );
+		RaycastHit hitInfo;
+		if(Physics.Linecast(new Vector3(cp.Value.x, 100.0f, cp.Value.z), cp.Value, out hitInfo) && (hitInfo.transform.tag == "block"))
+		{
+			Destroy(hitInfo.transform.gameObject);
+		}
+	}
 
     private Vector3? get_mouse_vector()
     {
@@ -71,11 +88,30 @@ public class CreateToClick : MonoBehaviour {
         {
             return null;
         }
+
     }
 
     public void setDropBox(int boxId)
     {
         Debug.Log (boxId);
+
+        switch (boxId) {
+        case 1:
+            drop_box = (GameObject)Resources.Load ("Prefabs/block_red");
+            break;
+        case 2:
+            drop_box = (GameObject)Resources.Load ("Prefabs/block_white");
+            break;
+        case 3:
+            drop_box = (GameObject)Resources.Load ("Prefabs/block_bule");
+            break;
+        case 4:
+            drop_box = (GameObject)Resources.Load ("Prefabs/block_green");
+            break;
+        case 5:
+            drop_box = (GameObject)Resources.Load ("Prefabs/block_brown");
+            break;
+        }
     }
 
 }

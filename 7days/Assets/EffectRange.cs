@@ -70,15 +70,15 @@ public class EffectRange : MonoBehaviour
             if (gm != null)
             {
                 mean += gm.transform.position / gms.Count;
-                
+
 				Destroy(gm.gameObject);
 				gm.SetActive(false);
-
 				print(gm.name);
             }
         }
 
 		Instantiate(next, CreateToClick.convert_position(mean).Value, next.transform.rotation);
+		Instantiate(Resources.Load("Prefabs/Effects/CombineEffect"), this.transform.position, this.transform.rotation);
 
 		Destroy(this.gameObject);
 		this.gameObject.SetActive(false);

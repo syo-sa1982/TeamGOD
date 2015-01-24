@@ -52,9 +52,12 @@
      <Compile Include="Assets\01_local\watanabe\ground.cs" />
      <Compile Include="Assets\BlockNumLabel.cs" />
      <Compile Include="Assets\CombineBlock.cs" />
+     <Compile Include="Assets\CreateEffect.cs" />
      <Compile Include="Assets\CreateToClick.cs" />
+     <Compile Include="Assets\DayLabel.cs" />
      <Compile Include="Assets\EffectRange.cs" />
      <Compile Include="Assets\Gui.cs" />
+     <Compile Include="Assets\moririring\RubicCube.cs" />
      <None Include="Assets\CactusPack\Shaders\VertexBlend.shader" />
      <None Include="Assets\CactusPack\Readme.txt" />
      <None Include="Assets\Baker House\Readme.txt" />
