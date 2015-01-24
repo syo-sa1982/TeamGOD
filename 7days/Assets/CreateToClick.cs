@@ -49,6 +49,13 @@ public class CreateToClick : MonoBehaviour {
 				createBox(pos);
 			}
         }
+		if (Input.GetMouseButtonDown (1))
+		{
+			if (pos != null)
+			{
+				deleteBox(pos);
+			}
+		}
 	}
     private void createBox(Vector3? pos)
     {
@@ -59,6 +66,15 @@ public class CreateToClick : MonoBehaviour {
                 new Vector3(cp.Value.x, 8.0f, cp.Value.z),
                 Quaternion.identity);
     }
+	private void deleteBox(Vector3? pos)
+	{
+		Vector3? cp = convert_position( pos );
+		RaycastHit hitInfo;
+		if(Physics.Linecast(new Vector3(cp.Value.x, 100.0f, cp.Value.z), cp.Value, out hitInfo) && (hitInfo.transform.tag == "block"))
+		{
+			Destroy(hitInfo.transform.gameObject);
+		}
+	}
 
     private Vector3? get_mouse_vector()
     {
