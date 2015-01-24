@@ -48,12 +48,18 @@
   <ItemGroup>
      <Compile Include="Assets\01_local\syo_sa\Scripts\ButtonController.cs" />
      <Compile Include="Assets\01_local\watanabe\camera_move.cs" />
+     <Compile Include="Assets\01_local\watanabe\gravity.cs" />
      <Compile Include="Assets\01_local\watanabe\ground.cs" />
      <Compile Include="Assets\BlockNumLabel.cs" />
      <Compile Include="Assets\CombineBlock.cs" />
      <Compile Include="Assets\CreateToClick.cs" />
      <Compile Include="Assets\EffectRange.cs" />
      <Compile Include="Assets\Gui.cs" />
+     <None Include="Assets\CactusPack\Shaders\VertexBlend.shader" />
+     <None Include="Assets\CactusPack\Readme.txt" />
+     <None Include="Assets\Baker House\Readme.txt" />
+     <None Include="Assets\CactusPack\Shaders\Basic_Rimlight.shader" />
+     <None Include="Assets\CactusPack\Shaders\VertexBlend_Old.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CreateToClick : MonoBehaviour {
 
-	private Vector3? convert_position( Vector3? pos )
+	public static Vector3? convert_position( Vector3? pos )
 	{
 		float x = Mathf.FloorToInt(pos.Value.x / 1.0f + 1.0f / 2.0f) * 1.0f;
 		float y = Mathf.FloorToInt(pos.Value.y / 1.0f + 1.0f / 2.0f) * 1.0f;

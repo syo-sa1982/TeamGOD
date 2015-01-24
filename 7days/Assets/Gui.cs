@@ -16,9 +16,9 @@ public class Gui : MonoBehaviour {
 
 	public void combine()
 	{
-		foreach( GameObject gm  in GameObject.FindGameObjectsWithTag("block") )
+		foreach( GameObject gm in GameObject.FindGameObjectsWithTag("block") )
 		{
-			if( gm != null )
+			if( gm.activeSelf )
 			{
 				gm.GetComponent<EffectRange>().check_run_combine();
 			}
