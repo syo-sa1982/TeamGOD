@@ -16,16 +16,14 @@ public class CreateToClick : MonoBehaviour {
             var pos = get_mouse_vector();
 			if (pos != null)
 			{
-				print(pos);
 				createBox(pos);
 			}
         }
-
 	}
     private void createBox(Vector3? pos)
     {
-		float x = (pos.Value.x / 1.0f + 1.0f / 2.0f) * 1.0f;
-		float z = (pos.Value.z / 1.0f + 1.0f / 2.0f) * 1.0f;
+		float x = Mathf.FloorToInt(pos.Value.x / 1.0f + 1.0f / 2.0f) * 1.0f;
+		float z = Mathf.FloorToInt(pos.Value.z / 1.0f + 1.0f / 2.0f) * 1.0f;
         var obj = Instantiate(
                 drop_box,
                 new Vector3(x, 8.0f, z),
