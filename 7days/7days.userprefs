@@ -1,11 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\create_to_click.js">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\CreateToClick.cs">
     <Files>
-      <File FileName="Assets\create_to_click.js" Line="26" Column="93" />
-      <File FileName="Assets\effect_range.js" Line="6" Column="30" />
-      <File FileName="Assets\combine_block.js" Line="14" Column="2" />
-      <File FileName="Assets\gui.js" Line="13" Column="31" />
+      <File FileName="Assets\CombineBlock.cs" Line="6" Column="2" />
+      <File FileName="Assets\CreateToClick.cs" Line="13" Column="18" />
+      <File FileName="Assets\EffectRange.cs" Line="17" Column="9" />
+      <File FileName="Assets\create_to_click.js" Line="3" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
