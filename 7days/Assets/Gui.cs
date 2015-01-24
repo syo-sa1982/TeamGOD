@@ -23,5 +23,8 @@ public class Gui : MonoBehaviour {
 				gm.GetComponent<EffectRange>().check_run_combine();
 			}
 		}	
-		
+		foreach (GameObject gm in GameObject.FindGameObjectsWithTag("block")) 
+		{
+			Destroy(gm);
+		}
 	}}

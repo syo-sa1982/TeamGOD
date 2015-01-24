@@ -8,6 +8,8 @@ public class EffectRange : MonoBehaviour
 {
 	public GameObject next_box1;
 	public GameObject next_box3;
+	public GameObject next_box6;
+	public GameObject next_box9;
 
     public float range;
     private float effect_count = 2.0f;
@@ -38,28 +40,29 @@ public class EffectRange : MonoBehaviour
 	            }
 			}
         }
-        if (gms.Count >= 3)
-        {
-			if( next_box3 != null )
-			{
-				List<GameObject> gms3 = new List<GameObject>();
-				for( int i = 0; i < 3 ; i++ )
-				{
-					gms3.Add( gms[i] );
-				}
-	            combine(gms3,next_box3);
-			}
-        }
-		if (gms.Count >= 1)
-		{
-			if( next_box1 != null )
-			{
-				List<GameObject> gms1 = new List<GameObject>();
-				gms1.Add( gms[0] );
+		if (combine_use_count (gms, next_box9, 9))return; 
+		if (combine_use_count (gms, next_box6, 6))return; 
+		if (combine_use_count (gms, next_box3, 3))return; 
+		if (combine_use_count (gms, next_box1, 1))return; 
+	}
 
-				combine(gms1,next_box1);
+	public bool combine_use_count( List<GameObject> gms , GameObject next , int count )
+	{
+		if (gms.Count >= count)
+		{
+			if( next != null )
+			{
+				List<GameObject> gmsn = new List<GameObject>();
+				for( int i = 0; i < count ; i++ )
+				{
+					gmsn.Add( gms[i] );
+				}
+				combine(gmsn,next);
+
+				return true;
 			}
 		}
+		return false;
 	}
 	
 	public void combine(List<GameObject> gms , GameObject next)
