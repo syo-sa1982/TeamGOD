@@ -2,7 +2,9 @@ fileFormatVersion: 2
 guid: 8155b50c9499cdd47836ade5ea9f97f0
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - next_box: {instanceID: 0}
+  - combine_effect: {fileID: 111030, guid: 92403b801bccc3841acc5cdeddf7ea16, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
