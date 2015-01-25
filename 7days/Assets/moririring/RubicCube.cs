@@ -31,11 +31,6 @@ namespace Check3D
         //}
         public bool ChangeRubicCubePattern(List<GameObject> before, int bx, int by, int bz, List<Gui.AfterData> after, int ax, int ay, int az, Gui.PatternData pattern)
         {
-            //before[0] = new GameObject("test");
-            //before[0].tag = "block";
-            //before[40 * 40 * 1 + 0] = new GameObject("test");
-            //before[40 * 40 * 1 + 0].tag = "block";
-
             for (int i = 0; i < before.Count; i++)
             {
                 PatternCheckAndReplace(i, before, bx, by, bz, after, ax, ay, az, pattern);
@@ -53,8 +48,14 @@ namespace Check3D
                     for (int i = 0; i < pattern.x; i++)
                     {
                         var bidx = idx + i + k*bx + j*bx*bz;
-                        if (before[bidx] == null) return false;
-                        if (before[bidx].tag != pattern.PaternArray[i, j, k]) return false;
+
+                        if (pattern.PaternArray[i, j, k] != "")
+                        {
+                            if (before[bidx] == null) return false;
+                            if (!before[bidx].name.Contains(pattern.PaternArray[i, j, k])) return false;
+
+                        }
+
                     }
                 }
             }
@@ -66,9 +67,10 @@ namespace Check3D
                     for (int i = 0; i < pattern.x; i++)
                     {
                         var bidx = idx + i + k * bx + j * bx * bz;
-                        if (before[bidx] != null && before[bidx].tag == pattern.PaternArray[i, j, k])
+                        if (before[bidx] != null && before[bidx].name.Contains(pattern.PaternArray[i, j, k]))
                         {
-                            after[bidx].name = before[bidx].tag;
+                            //cloneがはいってしまう
+                            after[bidx].name = before[bidx].name;
                             after[bidx].position = before[bidx].transform.position;
 
                             if (pattern.OneCheck) goto Jump;
