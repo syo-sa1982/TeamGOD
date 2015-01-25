@@ -48,4 +48,14 @@ public class Gui : MonoBehaviour {
 		}
 		
 	}
+
+	public void GameStart(){
+		combine ();
+		StartCoroutine (WaitAndLoadScene ());
+	}
+	public IEnumerator WaitAndLoadScene(){
+		yield return new WaitForSeconds (3.0f);
+		Application.LoadLevel(1);
+	}
+
 }
