@@ -115,7 +115,6 @@ public class EffectRange : MonoBehaviour
 				print(gm.name);
             }
         }
-		Debug.Log (next.GetComponent<ScoreManager>().Score);
 
 
 		gameRoot = GameObject.Find ("GameRoot").GetComponent<GameRoot> ();
