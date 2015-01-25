@@ -9,6 +9,8 @@ public class GameRoot : MonoBehaviour {
 
 	private Text blockText;
 
+	public int totalScore;
+
 
 	public bool isMaxBlock = false;
 
