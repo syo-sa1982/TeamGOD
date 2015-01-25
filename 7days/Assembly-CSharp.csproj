@@ -64,7 +64,6 @@
      <None Include="Assets\CactusPack\Shaders\VertexBlend.shader" />
      <None Include="Assets\Resources\Prefabs\Effects\Basic_Rimlight.shader" />
      <None Include="Assets\CactusPack\Readme.txt" />
-     <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
      <None Include="Assets\Baker House\Readme.txt" />
      <None Include="Assets\CactusPack\Shaders\Basic_Rimlight.shader" />
      <None Include="Assets\CactusPack\Shaders\VertexBlend_Old.shader" />
