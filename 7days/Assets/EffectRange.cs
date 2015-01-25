@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
+using UnityEngine.UI;
+
 public class EffectRange : MonoBehaviour
 {
 	public GameObject next_box1;
@@ -18,6 +20,10 @@ public class EffectRange : MonoBehaviour
 
 	public float range;
     private float effect_count = 2.0f;
+
+	private Text scoreText;
+	private GameRoot gameRoot;
+
 
     public float get_effect_count()
     {
@@ -109,6 +115,19 @@ public class EffectRange : MonoBehaviour
 				print(gm.name);
             }
         }
+		Debug.Log (next.GetComponent<ScoreManager>().Score);
+
+
+		gameRoot = GameObject.Find ("GameRoot").GetComponent<GameRoot> ();
+		scoreText = GameObject.Find ("ScoreArea/Score").GetComponent<Text> ();
+
+		// 総合得点
+		gameRoot.totalScore += next.GetComponent<ScoreManager> ().Score;
+
+		Debug.Log (gameRoot.totalScore);
+
+		scoreText.text = gameRoot.totalScore.ToString();
+
 
 		Instantiate(next, CreateToClick.convert_position(mean).Value, next.transform.rotation);
 		Instantiate(Resources.Load("Prefabs/Effects/CombineEffect"), this.transform.position, this.transform.rotation);
