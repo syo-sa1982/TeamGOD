@@ -22,7 +22,7 @@ public class EffectRange : MonoBehaviour
     private float effect_count = 2.0f;
 
 	private Text scoreText;
-	private GameRoot gameRoot;
+	//private GameRoot gameRoot;
 
 
     public float get_effect_count()
@@ -117,18 +117,18 @@ public class EffectRange : MonoBehaviour
         }
 
 
-		gameRoot = GameObject.Find ("GameRoot").GetComponent<GameRoot> ();
-		scoreText = GameObject.Find ("ScoreArea/Score").GetComponent<Text> ();
+        //gameRoot = GameObject.Find ("GameRoot").GetComponent<GameRoot> ();
+        //scoreText = GameObject.Find ("ScoreArea/Score").GetComponent<Text> ();
 
-		// 総合得点
-		gameRoot.totalScore += next.GetComponent<ScoreManager> ().Score;
+        //// 総合得点
+        //gameRoot.totalScore += next.GetComponent<ScoreManager> ().Score;
 
-		Debug.Log (gameRoot.totalScore);
+        //Debug.Log (gameRoot.totalScore);
 
-		scoreText.text = gameRoot.totalScore.ToString();
+        //scoreText.text = gameRoot.totalScore.ToString();
 
 
-		Instantiate(next, CreateToClick.convert_position(mean).Value, next.transform.rotation);
+		//Instantiate(next, CreateToClick.convert_position(mean).Value, next.transform.rotation);
 		Instantiate(Resources.Load("Prefabs/Effects/CombineEffect"), this.transform.position, this.transform.rotation);
 
 		Destroy(this.gameObject);
