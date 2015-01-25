@@ -58,9 +58,11 @@
      <Compile Include="Assets\EffectRange.cs" />
      <Compile Include="Assets\GameRoot.cs" />
      <Compile Include="Assets\Gui.cs" />
+     <Compile Include="Assets\KillObject.cs" />
      <Compile Include="Assets\NewBehaviourScript.cs" />
      <Compile Include="Assets\moririring\RubicCube.cs" />
      <None Include="Assets\CactusPack\Shaders\VertexBlend.shader" />
+     <None Include="Assets\Resources\Prefabs\Effects\Basic_Rimlight.shader" />
      <None Include="Assets\CactusPack\Readme.txt" />
      <None Include="Assets\Baker House\Readme.txt" />
      <None Include="Assets\CactusPack\Shaders\Basic_Rimlight.shader" />

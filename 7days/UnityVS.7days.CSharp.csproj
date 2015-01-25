@@ -66,6 +66,7 @@
     <Compile Include="Assets\EffectRange.cs" />
     <Compile Include="Assets\GameRoot.cs" />
     <Compile Include="Assets\Gui.cs" />
+    <Compile Include="Assets\KillObject.cs" />
     <Compile Include="Assets\NewBehaviourScript.cs" />
     <Compile Include="Assets\moririring\RubicCube.cs" />
   </ItemGroup>
@@ -75,6 +76,7 @@
     <None Include="Assets\CactusPack\Shaders\Basic_Rimlight.shader" />
     <None Include="Assets\CactusPack\Shaders\VertexBlend.shader" />
     <None Include="Assets\CactusPack\Shaders\VertexBlend_Old.shader" />
+    <None Include="Assets\Resources\Prefabs\Effects\Basic_Rimlight.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2013\UnityVS.CSharp.targets" />
 </Project>
