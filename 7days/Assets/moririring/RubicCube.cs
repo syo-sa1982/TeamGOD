@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using UnityEngine;
 
 namespace Check3D
 {
@@ -13,52 +14,69 @@ namespace Check3D
         /// </summary>
         /// <param name="rubiccube"></param>
         /// <returns></returns>
-        public List<int> GetListFromArray3(int[,,] array3)
+        public List<GameObject> GetListFromArray3(GameObject[, ,] array3)
         {
-            return array3.Cast<int>().ToList();
+            return array3.Cast<GameObject>().ToList();
         }
-        public bool ChangeRubicCube(List<int> before, List<int> after)
+        //public bool ChangeRubicCube(List<GameObject> before, List<string> after)
+        //{
+        //    for (int i = 0; i < before.Count; i++)
+        //    {
+        //        if (before[i].tag.Contains("block") )
+        //        {
+        //            after[i].tag = "Palm_small";
+        //        }
+        //    }
+        //    return true;
+        //}
+        public bool ChangeRubicCubePattern(List<GameObject> before, int bx, int by, int bz, List<Gui.AfterData> after, int ax, int ay, int az, Gui.PatternData pattern)
         {
+            //before[0] = new GameObject("test");
+            //before[0].tag = "block";
+            //before[40 * 40 * 1 + 0] = new GameObject("test");
+            //before[40 * 40 * 1 + 0].tag = "block";
+
             for (int i = 0; i < before.Count; i++)
             {
-                if (before[i] == 1)
-                {
-                    after[i] = 2;
-                }
-                else
-                {
-                    after[i] = before[i];
-                }
-            }
-            return true;
-        }
-        public bool ChangeRubicCubePattern(List<int> before, List<int> after, List<int> pattern)
-        {
-            for (int i = 0; i < before.Count; i++)
-            {
-                PatternCheckAndReplace(i, before, after, pattern);
+                PatternCheckAndReplace(i, before, bx, by, bz, after, ax, ay, az, pattern);
             }
             return true;
         }
         //パターンと箱があっているかチェック
-        public bool PatternCheckAndReplace(int index, List<int> before, List<int> after, List<int> pattern)
+        private bool PatternCheckAndReplace(int idx, List<GameObject> before, int bx, int by, int bz, List<Gui.AfterData> after, int ax, int ay, int az, Gui.PatternData pattern)
         {
             //パターンチェック
-            for (int i = 0; i < pattern.Count; i++)
+            for (int j = 0; j < pattern.y; j++)
             {
-                if (before[index + i] != pattern[i])
+                for (int k = 0; k < pattern.z; k++)
                 {
-                    return false;
+                    for (int i = 0; i < pattern.x; i++)
+                    {
+                        var bidx = idx + i + k*bx + j*bx*bz;
+                        if (before[bidx] == null) return false;
+                        if (before[bidx].tag != pattern.PaternArray[i, j, k]) return false;
+                    }
                 }
             }
-            //置換
-            for (int i = 0; i < pattern.Count; i++)
+            //生成
+            for (int j = 0; j < pattern.y; j++)
             {
-                if (before[index + i] == pattern[i] && pattern[i] > 0)
+                for (int k = 0; k < pattern.z; k++)
                 {
-                    after[index + i] = 2;
+                    for (int i = 0; i < pattern.x; i++)
+                    {
+                        var bidx = idx + i + k * bx + j * bx * bz;
+                        if (before[bidx] != null && before[bidx].tag == pattern.PaternArray[i, j, k])
+                        {
+                            after[bidx].name = before[bidx].tag;
+                            after[bidx].position = before[bidx].transform.position;
+
+                            if (pattern.OneCheck) goto Jump;
+                        }
+                    }
                 }
             }
+Jump:
             return true;
         }
     }
