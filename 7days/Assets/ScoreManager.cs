@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class NewBehaviourScript : MonoBehaviour {
+public class ScoreManager : MonoBehaviour {
+
+	public int Score;
 
 	// Use this for initialization
 	void Start () {
